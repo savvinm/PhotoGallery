@@ -16,8 +16,8 @@ struct MainView: View {
         itemAppearence.normal.iconColor = .lightGray
         itemAppearence.selected.iconColor = .black
         tabBarAppearence.compactInlineLayoutAppearance = itemAppearence
-        UITabBar.appearance().standardAppearance = tabBarAppearence*/
-        UITabBar.appearance().barTintColor = .red
+        UITabBar.appearance().standardAppearance = tabBarAppearence
+        UITabBar.appearance().barTintColor = .red*/
     }
     
     var body: some View {
@@ -29,31 +29,25 @@ struct MainView: View {
         .accentColor(.black)
     }
     
-    private var HomeTab: some View {
-        HomeView().tabItem {
+    private func tabIcon<T: View>(title: String, imageName: String, view: T) -> some View {
+        view.tabItem {
             VStack {
-                Image(uiImage: UIImage(named: "mainTab")!)
-                Text("Главная")
+                Image(uiImage: UIImage(named: imageName)!)
+                Text(title)
             }
         }
+    }
+    
+    private var HomeTab: some View {
+        tabIcon(title: "Главная", imageName: "mainTab", view: HomeView())
     }
     
     private var FavoriteTab: some View {
-        HomeView().tabItem {
-            VStack {
-                Image(uiImage: UIImage(named: "favoriteTab")!)
-                Text("Избранное")
-            }
-        }
+        tabIcon(title: "Избранное", imageName: "favoriteTab", view: FavoriteView())
     }
     
     private var ProfileTab: some View {
-        HomeView().tabItem {
-            VStack {
-                Image(uiImage: UIImage(named: "profileTab")!)
-                Text("Профиль")
-            }
-        }
+        tabIcon(title: "Профиль", imageName: "profileTab", view: ProfileView())
     }
 }
 

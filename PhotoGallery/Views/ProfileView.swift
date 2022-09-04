@@ -1,20 +1,20 @@
 //
-//  HomeView.swift
+//  ProfileView.swift
 //  PhotoGallery
 //
-//  Created by Maksim Savvin on 03.09.2022.
+//  Created by Maksim Savvin on 04.09.2022.
 //
 
 import SwiftUI
 
-struct HomeView: View {
+struct ProfileView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        ProfileView()
     }
 }
